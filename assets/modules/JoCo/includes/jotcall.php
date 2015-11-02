@@ -142,7 +142,7 @@ if( array_key_exists("saveIt", $_GET) )
 	$tbl = ($position == "doc") ? $modx->getFullTableName("site_content") : $modx->getFullTableName("site_tmplvar_contentvalues");
 	$contentField = ($position == "doc") ? "content" : "value";
 	
-	$select = mysql_query("SELECT $contentField FROM $tbl WHERE id=$sourceId");
+	$select = $modx->db-query("SELECT $contentField FROM $tbl WHERE id=$sourceId");
 	$row = $modx->db->getRow($select);
 	$contentValue = $row[$contentField];
 	

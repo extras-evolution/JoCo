@@ -74,7 +74,7 @@ if( array_key_exists("saveIt", $_GET) )
 	$oldCall = $_POST['oldCall'];	// current Jot call
 	$newCall = $_POST['newCall'];	// updated Jot call
 	
-	$select = mysql_query("SELECT `snippet` FROM " .$modx->getFullTableName("site_htmlsnippets"). " WHERE id=$sourceId");
+	$select = $modx->db-query("SELECT `snippet` FROM " .$modx->getFullTableName("site_htmlsnippets"). " WHERE id=$sourceId");
 	$row = $modx->db->getRow($select);
 	$contentValue = $row['snippet'];
 	
